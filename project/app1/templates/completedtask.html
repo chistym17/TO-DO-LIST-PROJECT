@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block pagetitle %}
+
+<h1 class='fs-1 fw-bold ' style='margin-left:500px;margin-top:40px '>Completed tasks</h1>
+
+
+{% endblock pagetitle %}
+
+
+{% block content %}
+
+<table class="table" style='width:50%; margin:auto'>
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+
+{% for i in tasks %}
+
+
+    <tr>
+      <td>{{i.task_title}}</td>
+      <td>{{i.task_description}}</td>
+      <td>completed </td>
+     
+    </tr>  
+
+
+
+
+{% endfor %}
+
+  </tbody>
+</table>
+
+
+
+          <a href="{% url 'homepage'  %}"  class='btn btn-primary' style='margin-left:500px;margin-top:50px'> Return to Homepage </a>
+
+
+{% endblock content %}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+ <style>
+        .flex-container {
+            display: flex;
+            margin: 10px;
+           margin-left: 300px;
+           margin-top: 50px;
+
+        }
+        .flex-container a{
+            margin-left: 30px;
+
+
+            }
+
+    </style>
+
+
+
+</head>
+<body>
+
+<nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#" style='color:white'>Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'homepage' %}"  style='color:white'>Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'addtask' %}" style='color:white'>add task</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="{% url 'tasklist' %}" style='color:white'>
+            show all tasks
+          </a>
+          
+        </li>
+          <li class="nav-item dropdown">
+          <a class="nav-link" href="{% url 'completedtasks' %}" style='color:white'>
+            completed tasks
+          </a>
+          
+        </li>
+        <li class="nav-item">
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit" style='color:white'>Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+</nav>
+
+
+{% block pagetitle  %}
+
+<h1 class='fs-1 fw-bold ' style='margin-left:350px;margin-top:40px '>Welcome to MyToDoList App</h1>
+
+
+<h5 class='' style='margin-left:200px;margin-top:20px '>
+
+
+
+Stay organized and manage your tasks with ease using MyToDoList,
+ your personal task management solution. <br> With MyToDoList,
+ you can effortlessly keep track of your tasks, set priorities,
+ and mark them as completed. <br> Whether it's for work, study, or your personal life, 
+MyToDoList empowers you to stay productive and in control
+
+
+
+
+</h5>
+
+
+    <div class="flex-container">
+          <a href="{% url 'addtask' %}"  class='btn btn-primary'> ADD TASK </a>
+           <a href="{% url 'tasklist' %}"  class='btn btn-primary'> VIEW TASKS </a>
+          <a href="{% url 'completedtasks'  %}"  class='btn btn-primary'> COMPLETED TASKS </a>
+
+
+    </div>
+
+
+
+
+{% endblock  %}
+
+
+{% block content %}{% endblock content %}
+
+</body>
+</html>
